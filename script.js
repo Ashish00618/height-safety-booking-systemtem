@@ -1,26 +1,20 @@
-document.getElementById('fetchDataBtn').addEventListener('click', openDialog);
-document.getElementById('selectAgencyBtn').addEventListener('click', selectAgency);
-document.getElementById('closeDialog').addEventListener('click', closeDialog);
+document.getElementById('fetchDataBtn').addEventListener('click', fetchData);
 document.getElementById('submitSaveBtn').addEventListener('click', submitSave);
 document.getElementById('exitBtn').addEventListener('click', exit);
 
-function openDialog() {
-    document.getElementById('agencyDialog').style.display = 'block';
-}
+function fetchData() {
+    const jobCode = document.getElementById('jobCode').value;
+    const csno = document.getElementById('csno').value;
+    const workArea = document.getElementById('workArea').value;
+    const jobEndDate = document.getElementById('jobEndDate').value;
+    const agency = document.getElementById('agency').value;
+    
+    if (!jobCode || !csno || !workArea || !jobEndDate || !agency) {
+        alert('Please fill all header fields.');
+        return;
+    }
 
-function closeDialog() {
-    document.getElementById('agencyDialog').style.display = 'none';
-}
-
-function selectAgency() {
-    const agency = document.getElementById('agencySelect').value;
-    document.getElementById('agency').textContent = agency;
-    fetchData(agency);
-    closeDialog();
-}
-
-function fetchData(agency) {
-    // Simulate fetching data from the server
+    // Fetch data based on the job code and other fields
     const bookingData = generateBookingData();
     const applicationData = generateApplicationData(agency);
     displayBookingData(bookingData);

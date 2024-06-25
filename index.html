@@ -13,11 +13,17 @@
         <button id="fetchDataBtn">Click to Get Data</button>
         
         <header class="header">
-            <div class="header-item">Job Code: <span id="jobCode">12345</span></div>
-            <div class="header-item">Csno: <span id="csno">67890</span></div>
-            <div class="header-item">Work Area: <span id="workArea">Area A</span></div>
-            <div class="header-item">Job End Date: <span id="jobEndDate">2024-12-31</span></div>
-            <div class="header-item">Agency: <span id="agency">XYZ Corp</span></div>
+            <div class="header-item">Job Code: <input type="text" id="jobCode" /></div>
+            <div class="header-item">Csno: <input type="text" id="csno" /></div>
+            <div class="header-item">Work Area: <input type="text" id="workArea" /></div>
+            <div class="header-item">Job End Date: <input type="date" id="jobEndDate" /></div>
+            <div class="header-item">Agency: 
+                <select id="agency">
+                    <option value="XYZ Corp">XYZ Corp</option>
+                    <option value="ABC Ltd">ABC Ltd</option>
+                    <option value="123 Inc">123 Inc</option>
+                </select>
+            </div>
         </header>
         
         <div class="content">
